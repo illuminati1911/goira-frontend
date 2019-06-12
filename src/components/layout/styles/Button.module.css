@@ -1,0 +1,18 @@
+@value colors: './colors.css';
+@value app_blue, app_lightblue from colors;
+
+
+.regular {
+    composes: white from './Text.module.css';
+    background-color: app_blue;
+    border: 0;
+    border-radius: 4px;
+    padding: 15px 100px;
+    margin-top: 10px;
+    font-size: 20px;
+    width: 320px;
+}
+
+.regular:hover {
+    background-color: app_lightblue;
+}

@@ -1,0 +1,27 @@
+@value colors: './colors.css';
+@value app_darkgray, app_gray, app_lightgray from colors;
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: local('OpenSans'), url(../fonts/Open_Sans/OpenSans-Regular.ttf) format('ttf');
+}
+
+.dark {
+    color: app_darkgray;
+    font-family: "OpenSans-Regular", sans-serif;
+}
+
+.regular {
+    color: app_gray;
+    font-family: "OpenSans-Regular", sans-serif;
+}
+
+.light {
+    color: app_lightgray;
+    font-family: "OpenSans-Regular", sans-serif;
+}
+
+.white {
+    color: white;
+    font-family: "OpenSans-Regular", sans-serif;
+}
