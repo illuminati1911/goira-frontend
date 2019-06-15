@@ -5,6 +5,7 @@
 .regular {
     composes: white from './Text.module.css';
     background-color: app_blue;
+    cursor:pointer;
     border: 0;
     border-radius: 4px;
     padding: 15px 100px;

@@ -1,13 +1,15 @@
 import React from 'react'
+import Store from '../Store'
 import styles from './layout/styles/App.module.css'
 import Login from './Login'
-import LoadingSpinner from './LoadingSpinner'
 
 const App = () => {
     return (
-        <div className={styles.container}>
-            <Login />
-        </div>
+        <Store>
+            <div className={styles.container}>
+                <Login />
+            </div>
+        </Store>
     )
 }
 

@@ -6,6 +6,7 @@ const InputField = (props) => {
         <input 
             className={fieldStyles.regular} 
             type={props.type} 
+            value={props.value}
             placeholder={props.placeholder} 
             onChange={e => props.stream(e.target.value)} />
     )
