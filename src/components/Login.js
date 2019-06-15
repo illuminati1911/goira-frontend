@@ -6,7 +6,7 @@ import { CTX } from '../Store'
 import Button from './Button'
 import InputField from './InputField';
 import LoadingSpinner from './LoadingSpinner';
-import { loginRequest } from '../actions/loginAction';
+import { loginRequest } from '../actions/authAction';
 
 const Login = () => {
     const [store, dispatch] = useContext(CTX)
@@ -14,7 +14,7 @@ const Login = () => {
     const login = loginRequest(dispatch)
 
     const callback = () => {
-        dispatch(login(password))
+        login(password)
         setPassword('')
     }
 

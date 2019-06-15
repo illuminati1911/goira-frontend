@@ -1,8 +1,5 @@
-/*export const loginRequest = () => {
-    return {
-        type: 'LOGIN_REQUEST_BEGIN'
-    }
-}*/
+import { errorLogin } from "../tools/errorMessages";
+import { isAuthenticated } from "../tools/storage";
 
 export const loginRequest = dispatch => async password => {
     dispatch({type: 'LOGIN_REQUEST_BEGIN'})
@@ -15,9 +12,15 @@ export const loginRequest = dispatch => async password => {
             'Content-Type': 'application/json'
         }
     })
-    if (!response.ok) {
-        dispatch({type: 'LOGIN_REQUEST_FAILURE'})
-        return
+    dispatch({
+        type: 'LOGIN_REQUEST_END',
+        payload: {isAuthenticated: isAuthenticated(), error: errorLogin(response)}
+    })
+}
+
+export const checkForSession = () => {
+    return {
+        type: 'SET_AUTHENTICATED',
+        payload: isAuthenticated()
     }
-    dispatch({type: 'LOGIN_REQUEST_SUCCESS'})
 }

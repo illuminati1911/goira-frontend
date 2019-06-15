@@ -1,15 +1,22 @@
-import React from 'react'
-import Store from '../Store'
+import React, { useContext, useEffect } from 'react'
 import styles from './layout/styles/App.module.css'
 import Login from './Login'
+import { CTX } from '../Store'
+import { checkForSession } from '../actions/authAction';
 
 const App = () => {
+    const [store, dispatch] = useContext(CTX)
+    const readSession = () => dispatch(checkForSession())
+
+    useEffect(() => {
+        readSession()
+    }, [store.auth.isAuthenticated])
+    
     return (
-        <Store>
-            <div className={styles.container}>
-                <Login />
-            </div>
-        </Store>
+        <div className={styles.container}>
+            <Login />
+            { store.auth.isAuthenticated ? "YES" : "NOT" }
+        </div>
     )
 }
 
