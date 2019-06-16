@@ -1,0 +1,40 @@
+.container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.controlbuttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.temp {
+    composes: white from './Text.module.css';
+    font-size: 72px;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    animation: Fan-spin infinite 1.0s linear;
+    margin-bottom: 50px;
+}
+
+
+@keyframes Fan-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

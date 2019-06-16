@@ -5,6 +5,7 @@ import textStyles from './layout/styles/Text.module.css'
 import { CTX } from '../Store'
 import Button from './Button'
 import InputField from './InputField';
+import history from '../history'
 import LoadingSpinner from './LoadingSpinner';
 import { loginRequest } from '../actions/authAction';
 
@@ -16,6 +17,10 @@ const Login = () => {
     const callback = () => {
         login(password)
         setPassword('')
+    }
+
+    if (store.auth.isAuthenticated) {
+        history.push('/ac')
     }
 
     return (

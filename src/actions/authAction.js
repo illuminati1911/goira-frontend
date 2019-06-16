@@ -1,5 +1,6 @@
 import { errorLogin } from "../tools/errorMessages";
 import { isAuthenticated } from "../tools/storage";
+import history from '../history'
 
 export const loginRequest = dispatch => async password => {
     dispatch({type: 'LOGIN_REQUEST_BEGIN'})
@@ -16,6 +17,9 @@ export const loginRequest = dispatch => async password => {
         type: 'LOGIN_REQUEST_END',
         payload: {isAuthenticated: isAuthenticated(), error: errorLogin(response)}
     })
+    if (response.ok) {
+        history.push('/ac')
+    }
 }
 
 export const checkForSession = () => {

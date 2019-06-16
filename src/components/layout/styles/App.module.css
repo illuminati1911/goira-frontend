@@ -3,6 +3,7 @@
 
 .container {
     background-color: app_blue;
+    background-image: linear-gradient(app_blue, #4BA6FF, #A5D3FF, #FFFFFF);
     width: 100vw;
     height: 100vh;
     display: flex;
