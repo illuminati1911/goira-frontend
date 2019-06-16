@@ -1,4 +1,4 @@
-import history from '../history'
+import { endSession } from '../tools/session'
 
 export const fetchACStatus = async dispatch => {
     //dispatch({type: 'AC_STATUS_REQUEST_BEGIN'})
@@ -12,7 +12,7 @@ export const fetchACStatus = async dispatch => {
     console.log(data)
 
     if (response.status === 401) {
-        history.push('/')
+        endSession()
         return
     }
     dispatch({type: 'AC_STATUS_REQUEST_END', payload: data })
@@ -34,7 +34,7 @@ export const setACStatus = dispatch => async state => {
     console.log(data)
 
     if (response.status === 401) {
-        history.push('/')
+        endSession()
         return
     }
     dispatch({type: 'AC_SET_STATUS_REQUEST_END', payload: data })

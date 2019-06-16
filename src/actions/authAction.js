@@ -1,5 +1,5 @@
 import { errorLogin } from "../tools/errorMessages";
-import { isAuthenticated } from "../tools/storage";
+import { isAuthenticated } from "../tools/session";
 import history from '../history'
 
 export const loginRequest = dispatch => async password => {
