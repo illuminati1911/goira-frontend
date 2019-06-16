@@ -24,10 +24,19 @@
 .image {
     width: 200px;
     height: 200px;
-    animation: Fan-spin infinite 1.0s linear;
     margin-bottom: 50px;
 }
 
+.imageanim {
+  width: 200px;
+  height: 200px;
+  animation: Fan-spin infinite 1.0s linear;
+  margin-bottom: 50px;
+}
+
+.transmit {
+  margin-top: 20px;
+}
 
 @keyframes Fan-spin {
     from {

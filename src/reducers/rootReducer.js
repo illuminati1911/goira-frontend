@@ -1,5 +1,6 @@
 import combineReducers from "./combineReducers";
 import authReducer from "./authReducer";
+import acReducer from "./acReducer";
 import { isAuthenticated } from "../tools/storage";
 
 export const defaultState = {
@@ -7,11 +8,16 @@ export const defaultState = {
        isLoading: false,
        isAuthenticated: isAuthenticated(),
        error: null
+    },
+    ac: {
+        remote: null,
+        local: null
     }
 }
 
 const reducers = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    ac: acReducer
 })
 
 export default reducers
