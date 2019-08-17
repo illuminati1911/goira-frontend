@@ -14,28 +14,37 @@
     justify-content: space-around;
     width: 300px;
     margin-top: 20px;
+    flex: 1;
 }
 
 .temp {
     composes: white from './Text.module.css';
     font-size: 72px;
+    flex: 1;
+    margin: 20px 0 20px 0;
 }
 
 .image {
     width: 200px;
     height: 200px;
-    margin-bottom: 50px;
+}
+
+.imagecontainer {
+  flex: 5;
+  display: flex;
+  align-items: center;
 }
 
 .imageanim {
   width: 200px;
   height: 200px;
   animation: Fan-spin infinite 1.0s linear;
-  margin-bottom: 50px;
+  flex: 3;
 }
 
 .transmit {
   margin-top: 20px;
+  flex: 2;
 }
 
 @keyframes Fan-spin {
@@ -47,3 +56,10 @@
     }
   }
   
+
+  @media only screen and (max-width: 500px) {
+    .container {
+        width: 95vw;
+        height: 100vh;
+    }
+}
