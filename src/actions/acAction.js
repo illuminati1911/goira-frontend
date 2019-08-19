@@ -1,15 +1,13 @@
 import { endSession } from '../tools/session'
 
-export const fetchACStatus = async dispatch => {
+export const fetchACStatus = async (dispatch, client) => {
     //dispatch({type: 'AC_STATUS_REQUEST_BEGIN'})
-    const response = await fetch('http://localhost:8080/status', {
+    const response = await client('http://localhost:8080/status', {
         method: 'GET',
         mode: 'cors',
         credentials: 'include'
     })
     const data = await response.json()
-
-    console.log(data)
 
     if (response.status === 401) {
         endSession()
@@ -18,9 +16,9 @@ export const fetchACStatus = async dispatch => {
     dispatch({type: 'AC_STATUS_REQUEST_END', payload: data })
 } 
 
-export const setACStatus = dispatch => async state => {
+export const setACStatus = (dispatch, client) => async state => {
     //dispatch({type: 'AC_STATUS_REQUEST_BEGIN'})
-    const response = await fetch('http://localhost:8080/state', {
+    const response = await client('http://localhost:8080/state', {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',
@@ -30,8 +28,6 @@ export const setACStatus = dispatch => async state => {
         }
     })
     const data = await response.json()
-
-    console.log(data)
 
     if (response.status === 401) {
         endSession()

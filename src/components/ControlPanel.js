@@ -13,13 +13,14 @@ import { fetchACStatus, setACStatus, setTemp, setMode, togglePower } from '../ac
 
 const ControlPanel = () => {
     const [store, dispatch] = useContext(CTX)
-    
+    const client = fetch
+
     if (!store.auth.isAuthenticated) {
         history.push('/')
     }
 
     useEffect(() => {
-        fetchACStatus(dispatch)
+        fetchACStatus(dispatch, client)
     }, [])
 
     const onSliderChange = e => {
@@ -35,7 +36,7 @@ const ControlPanel = () => {
     }
 
     const onTransmit = () => {
-        setACStatus(dispatch)(store.ac.local)
+        setACStatus(dispatch, client)(store.ac.local)
     }
 
     if (store.ac.remote === null) {

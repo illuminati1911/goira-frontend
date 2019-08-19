@@ -12,7 +12,8 @@ import { loginRequest } from '../actions/authAction';
 const Login = () => {
     const [store, dispatch] = useContext(CTX)
     const [password, setPassword] = useState('')
-    const login = loginRequest(dispatch)
+    const client = fetch
+    const login = loginRequest(dispatch, client)
 
     const callback = () => {
         login(password)
