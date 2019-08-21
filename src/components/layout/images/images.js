@@ -8,6 +8,7 @@ import drop_on from './drop_blue.svg'
 import drop_off from './drop_white.svg'
 import fan from './fan.png'
 import fan_white from './fan_white.png'
+import brightness from './brightness.svg'
 
 export default {
     power_on,
@@ -19,5 +20,6 @@ export default {
     drop_on,
     drop_off,
     fan,
-    fan_white
+    fan_white,
+    brightness
 }

@@ -7,6 +7,7 @@ import Login from './Login'
 import { CTX } from '../Store'
 import { checkForSession } from '../actions/authAction';
 import ControlPanel from './ControlPanel';
+import { toggleUIMode } from '../actions/settingsAction'
 
 const App = (props) => {
     const [store, dispatch] = useContext(CTX)
@@ -15,9 +16,14 @@ const App = (props) => {
     useEffect(() => {
         readSession()
     }, [store.auth.isAuthenticated])
+
+    const onBrightnessModeSelect = () => {
+        dispatch(toggleUIMode())
+    }
     
     return (
         <div className={store.settings.darkmode ? styles.containerdark : styles.containerlight}>
+            <button className={styles.brightness} onClick={onBrightnessModeSelect} />
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Login} />
