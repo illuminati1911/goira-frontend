@@ -1,4 +1,11 @@
-.container {
+.containerdark {
+    background-color: #2d303a;
+    width: 400px;
+    height: 400px;
+    border-radius: 4px;
+}
+
+.containerlight {
     background-color: white;
     width: 400px;
     height: 400px;
@@ -13,7 +20,10 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .container {
+    .containerlight {
+        width: 95vw;
+    }
+    .containerdark {
         width: 95vw;
     }
 }

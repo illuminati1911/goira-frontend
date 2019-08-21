@@ -17,7 +17,7 @@ const App = (props) => {
     }, [store.auth.isAuthenticated])
     
     return (
-        <div className={styles.container}>
+        <div className={store.settings.darkmode ? styles.containerdark : styles.containerlight}>
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Login} />

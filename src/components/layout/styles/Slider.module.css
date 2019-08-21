@@ -1,13 +1,24 @@
 @value colors: './colors.css';
 @value app_blue, app_lightblue, app_lightgray from colors;
 
-.slider {
+.sliderdark {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #2d303a;
+  outline: 0;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  opacity: 1.0;
+}
+
+.sliderlight {
     -webkit-appearance: none;
     width: 300px;
     height: 15px;
     border-radius: 10px;
     background-color: app_lightblue;
-    background-image: linear-gradient(to right, #CCccff, #deefff);
     outline: 0;
     -webkit-transition: .2s;
     transition: opacity .2s;
@@ -15,11 +26,15 @@
     box-shadow: 0px 0px 5px 1px rgba(30,144,255,0.37);
   }
   
-  .slider:hover {
+  .sliderdark:hover {
+    opacity: 1;
+  }
+
+  .sliderlight:hover {
     opacity: 1;
   }
   
-  .slider::-webkit-slider-thumb {
+  .sliderdark::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
@@ -28,17 +43,43 @@
     background: white;
     cursor: pointer;
     box-shadow: 0px 0px 5px 1px rgba(30,144,255,0.37);
-  }
-
-.slider::-moz-focus-outer {
     border: 0;
   }
-  
-  .slider::-moz-range-thumb {
+
+  .sliderlight::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: white;
     cursor: pointer;
     box-shadow: 0px 0px 5px 1px rgba(30,144,255,0.37);
+    border: 0;
+  }
+
+.sliderdark::-moz-focus-outer {
+    border: 0;
+  }
+
+  .sliderlight::-moz-focus-outer {
+    border: 0;
+  }
+  
+  .sliderdark::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 0;
+  }
+
+  .sliderlight::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 0;
   }

@@ -1,7 +1,6 @@
 @value colors: './colors.css';
 @value app_blue, app_lightblue from colors;
 
-
 .regular {
     composes: white from './Text.module.css';
     background-color: app_blue;
@@ -12,18 +11,26 @@
     margin-top: 10px;
     font-size: 20px;
     width: 320px;
+    opacity: 0.8;
 }
 
 .regular:hover {
-    background-color: app_lightblue;
+    opacity: 1.0;
 }
 
 .regular::-moz-focus-inner {
     border: 0;
 }
 
+.disabled {
+    composes: regular;
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .round_off {
-    background-color: app_lightblue;
+    background-color: app_blue;
     cursor:pointer;
     border: 0;
     border-radius: 50%;
@@ -34,7 +41,8 @@
     outline: 0;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    opacity: 0.8;
 }
 
 .round_off::-moz-focus-inner {
@@ -42,7 +50,7 @@
 }
 
 .round_off:hover {
-    background-color: app_blue;
+    opacity: 1.0;
 }
 
 .round_off:active {

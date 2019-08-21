@@ -2,7 +2,7 @@ import { endSession } from '../tools/session'
 
 export const fetchACStatus = async (dispatch, client) => {
     //dispatch({type: 'AC_STATUS_REQUEST_BEGIN'})
-    const response = await client('http://localhost:8080/status', {
+    const response = await client('/status', {
         method: 'GET',
         mode: 'cors',
         credentials: 'include'
@@ -18,7 +18,7 @@ export const fetchACStatus = async (dispatch, client) => {
 
 export const setACStatus = (dispatch, client) => async state => {
     //dispatch({type: 'AC_STATUS_REQUEST_BEGIN'})
-    const response = await client('http://localhost:8080/state', {
+    const response = await client('/state', {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',

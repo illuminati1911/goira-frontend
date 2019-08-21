@@ -1,7 +1,7 @@
 @value colors: './colors.css';
 @value app_darkgray, app_lightgray from colors;
 
-.regular {
+.regularlight {
     composes: dark from './Text.module.css';
     background-color: app_lightgray;
     width: 320px;
@@ -11,4 +11,33 @@
     border-radius: 4px;
     font-size: 16px;
     text-align: center;
+}
+
+.regulardark {
+    composes: white from './Text.module.css';
+    background-color: #444857;
+    width: 320px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.regular::placeholder {
+    color: white;
+}
+
+.regular::-moz-placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.regular:-moz-placeholder {
+    color: white;
+}
+
+.regular::-webkit-input-placeholder {
+    color: white;
 }

@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
-
 
 .controlbuttons {
     display: flex;
@@ -14,13 +14,11 @@
     justify-content: space-around;
     width: 300px;
     margin-top: 20px;
-    flex: 1;
 }
 
 .temp {
     composes: white from './Text.module.css';
     font-size: 72px;
-    flex: 1;
     margin: 20px 0 20px 0;
 }
 
@@ -30,7 +28,7 @@
 }
 
 .imagecontainer {
-  flex: 5;
+  margin-top: 50px;
   display: flex;
   align-items: center;
 }
@@ -39,12 +37,10 @@
   width: 200px;
   height: 200px;
   animation: Fan-spin infinite 1.0s linear;
-  flex: 3;
 }
 
 .transmit {
-  margin-top: 20px;
-  flex: 2;
+  margin: 20px 0 20px 0;
 }
 
 @keyframes Fan-spin {
@@ -61,5 +57,8 @@
     .container {
         width: 95vw;
         height: 100vh;
+    }
+    .transmit {
+      margin: 0 0 20px 0;
     }
 }

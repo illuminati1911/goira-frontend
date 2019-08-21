@@ -2,13 +2,10 @@ import React from 'react'
 import styles from './layout/styles/Slider.module.css'
 
 const Slider = (props) => {
-
-
-
     return (
         <div className="slidecontainer">
             <input
-                className={styles.slider}
+                className={props.darkmode ? styles.sliderdark : styles.sliderlight}
                 type="range" 
                 min="16" 
                 max="30" 

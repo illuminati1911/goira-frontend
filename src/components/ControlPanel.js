@@ -48,7 +48,9 @@ const ControlPanel = () => {
     
     return (
         <div className={styles.container}>
-            <img className={propeller} src={images.fan} alt="Fan" />
+            <div className={styles.imagecontainer}>
+                <img className={propeller} src={images.fan_white} alt="Fan" />
+            </div>
             <h1 className={styles.temp}>{store.ac.local.temp}°C</h1>
             <Slider
                 defaultValue={store.ac.local.temp}
@@ -66,13 +68,13 @@ const ControlPanel = () => {
                     selectMode={onModeSelect}
                 />
             </div>
-            {isLocalStateChanged 
-                ?   <div className={styles.transmit}>
-                        <Button
-                            action={onTransmit}
-                        >Transmit</Button>
-                    </div> 
-                : null}
+            <div className={styles.transmit}>
+                <Button 
+                    action={onTransmit} 
+                    disabled={!isLocalStateChanged} >
+                        Transmit
+                </Button>
+            </div> 
         </div>
     )
 }

@@ -4,7 +4,7 @@ import history from '../history'
 
 export const loginRequest = (dispatch, client) => async password => {
     dispatch({type: 'LOGIN_REQUEST_BEGIN'})
-    const response = await client('http://localhost:8080/login', {
+    const response = await client('/login', {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',

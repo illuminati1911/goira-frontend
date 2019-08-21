@@ -4,7 +4,7 @@ import fieldStyles from './layout/styles/Field.module.css'
 const InputField = (props) => {
     return (
         <input 
-            className={fieldStyles.regular} 
+            className={props.darkmode ? fieldStyles.regulardark : fieldStyles.regularlight} 
             type={props.type} 
             value={props.value}
             placeholder={props.placeholder} 

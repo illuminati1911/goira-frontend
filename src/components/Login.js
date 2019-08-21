@@ -25,14 +25,15 @@ const Login = () => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={store.settings.darkmode ? styles.containerdark : styles.containerlight}>
             <div className={styles.innercontainer}>
-                <h1 className={textStyles.regular}>Login</h1>
+                <h1 className={store.settings.darkmode ? textStyles.white : textStyles.regular}>Login</h1>
                 <InputField 
                     type="password"
                     placeholder="password"
                     stream={setPassword}
                     value={password}
+                    darkmode={store.settings.darkmode}
                     />
                 <Button action={callback} >
                         {store.auth.isLoading 
