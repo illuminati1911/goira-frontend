@@ -1,9 +1,7 @@
 @value colors: './colors.css';
-@value app_blue from colors;
+@value app_blue, app_flatdark from colors;
 
-.containerlight {
-    background-color: app_blue;
-    background-image: linear-gradient(app_blue, #4BA6FF, #A5D3FF, #FFFFFF);
+.container {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -12,14 +10,15 @@
     justify-content: center;
 }
 
+.containerlight {
+    composes: container;
+    background-color: app_blue;
+    background-image: linear-gradient(app_blue, #4BA6FF, #A5D3FF, #FFFFFF);
+}
+
 .containerdark {
-    background-color: #1e1f26;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    composes: container;
+    background-color: app_flatdark;
 }
 
 .brightness {

@@ -5,7 +5,7 @@ const Slider = (props) => {
     return (
         <div className="slidecontainer">
             <input
-                className={props.darkmode ? styles.sliderdark : styles.sliderlight}
+                className={styles.slider}
                 type="range" 
                 min="16" 
                 max="30" 
